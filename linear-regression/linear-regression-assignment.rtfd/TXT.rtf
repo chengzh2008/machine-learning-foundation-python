@@ -1,0 +1,243 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Medium;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red30\green87\blue232;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\margl1440\margr1440\vieww15240\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl800\sa280
+
+\f0\fs68 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Predicting house prices\
+\pard\pardeftab720\sl400\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this module, we focused on using regression to predict a continuous value (house prices) from features of the house (square feet of living space, number of bedrooms,...). We also built an iPython notebook for predicting house prices, using data from King County, USA, the region where the city of Seattle is located.\
+In this assignment, we are going to build a more accurate regression model for predicting house prices by including more features of the house. In the process, we will also become more familiar with how the Python language can be used for data exploration, data transformations and machine learning. These techniques will be key to building intelligent applications.\
+Follow the rest of the instructions on this page to complete your program. When you are done, 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 instead of uploading your code, you will answer a series of quiz questions
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  (see the quiz after this reading) to document your completion of this assignment. The instructions will indicate what data to collect for answering the quiz.\
+\pard\pardeftab720\sl480\sa280
+
+\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Learning outcomes
+\f1\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls1\ilvl0
+\f0\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Execute programs with the iPython notebook\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Load and transform real, tabular data\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute summaries and statistics of the data\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Build a regression model using features of the data\cb1 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl480\sa280
+
+\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources you will need
+\f1\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You will need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Download the data and starter code to use GraphLab Create\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Before getting started, you will need to download the dataset and the starter iPython notebook that we used in the module.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the house sales pricing dataset here, in SFrame format:
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/Nw0_J6OBJCIC9uTz1xtoYjGOaR1QV07vbNYR5YWDSwGQriCmPdWzsWLxuVghkwVlOISU4kzf0qNU3wEODzjTfw.jzE0dPl8I2L4eH2IyJdHcw.PNPmMvIlrEWeHtBTvsiKqHGjHPGjhDklZth00jZS1bCTTbw53TzCoM7DS_kCTM2FgDYLOi3AaGpT30xdupL6s-4oMQ32h0aCjtqyEwizovHEm2ia6BSmi9CS6U4uQb78FXiCEuJqn1HSuGmP6TGUPS2r22fjGyZ6GKdhoD56-q2KSMZjXdsi50xacgmVMsprDMOb-zedHj97BdzashM3n5mmuB1Mx8ta82sBoPqrKK6A9fXeTv4AD5Os23cbFFtrOFA96xRGT0kzUKCrUaCbCKDXwh3V2FjBWLguHfP8VRt8wojTa2q-0d2UJljOBoCgXe_RCWhcLBM2FUSXj_dcc48tU-OgWplXT7mK4UTRctQrVkEu1svSAzA2FGbwON44oqGx_wmtgEQ3P0H4Pzl1QEu5hbHVMTp4PZQYKM_rm1yohWawS1Tp0TIHCmO3JFOo"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 home_data.gl.zip}}
+\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the house price prediction notebook from the module here: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/ppKYxg2Y2KzoWwlJNPm7PqLzdpimyEQpaBoUta9z3dqGHrNPW8158QribntDmifSBM4DHNcY__0PaJjE4pExSg.7v5mDk2N9SzW2He6Rr3OEA.EBI-n02wAP_b5A6esoxQntQ_fl2bIHGjgfkj3y7SXhVb97Ra9kuxvT8P0eGgD1vTJXoUch64KgHOP7K7JxLgIo8nlQIDo54s8KjSBsxhtsjxFnYuT_L4sUTIyaQqqEp_KgeBCERgma5Lz7TGptX_peh9FhQj_1SPteEX8PQxhdPD0fC09kv77vIan3PcTAt-67FknnrrONV0ksN1mLiXAgmVmjUTcAZZZF6yUtsaWESxjHOf2Dml6PsRVhHG_soQRKO05oSQYWox9GHH2HJ5Z1l0a9JeGM9j4W4jr-9kwHqoJM8kH3ZniGFrynOXGir0laEbahasSOQkjmIk_2wzQBflv0SRGyCRU5xUYGCjl0ytmHp8lMJ4rf5OZq_TZVPC6_eK0KSFM_lETK6XKalFNFWBfNwo-reoVMBGjJAfhAhIB6LiuEpnHQ_3mTZfbPCk75QoTuoeib8qQRa7MiXUoUCAb57rGy0OOlaXAPrdmJQ"}}{\fldrslt 
+\b \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Predicting house prices.ipynb}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling iPython notebook from) and unzip the data file.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note that there is a bug in GraphLab Create 1.6.0, where the scatter plots don't show up in the notebook. Please upgrade to a newer version, if you have 1.6.0.\cb1 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now you are ready to get started!\
+\
+\
+\pard\pardeftab720\sl480\sa280
+
+\i\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Note: If you would rather use other ML tools...
+\f1\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome to use any ML tool for this course, such as {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/2Y7tBRNZ-XZIE_flmf2D22y0TP7bQGy2XSfWrAHIa5FP_Nvjpad5MEK22S6illPLB4kKqpl4cABi31NsQxb1RA.J96O6P0OD6E5rMseU4kiag.unh04Let0NrckdHXKLCOIGZ2nUGbgauMUwOzhcaTzTcFvFpmFTj4vLHUZUNspFUCg6Peo6Hihe-vqB--gPMq664Djj0827guZhe1XGWHGgX4pNnYKvCPpIn7MDoo-_jK3d9KAk2nGdyAKBPJ4cegwsER-fpeP9j0Pw67VhONV0G7pKH-BcaOqUCShIAivHmickJsYxbzybnZx18Ts60o7XbC8Y-Dos-lWOphBcNmUNsoy3k8sW6CBfbunvuvXL5QkUiiZfmbR5WOPEyCe5t1YGsnqxV-rXk5C1qrPdA39Gk"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 scikit-learn}}. Though, as discussed in the intro module,
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  we strongly recommend you use IPython Notebook and GraphLab Create. (GraphLab Create is free for academic purposes.)
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+If you are choosing to use other packages, we still recommend you use SFrame, which will allow you to scale to much larger datasets than Pandas. (Though, it's possible to use Pandas in this course, if your machine has sufficient memory.) The SFrame package is available in {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/s9ZenAUOnAyLhOm0psSjkFPD_PaP7j9guqOg2Hzw8XKo68JOCqcZUSxfvNHrHNnK6hHNe5yoLAsndi0N6EdWkQ.ykD3a4UxmN0Nl6NCXUN-9A.1-r84LZ9ZvCUFfPPcb-byO6jua5JylGxe5NCFKZiH3EJPf4kituI2FwrdAq-7hnJqkg2DJV81voPrqKRxC9ThO2eZEQokiW8pIErRzvBlOmxc6E8TFOa82yPXPv6gqI9XLj05GMVm0n8Jw6tDwRHi4RRkOg1H8s1i9KDEoXya9cJuVGReK-uhL6OjyGgkxas7Tr_40yDm0rzDetZ3fYfK6F81eL9Nzd9oupMX3CkayFAvb-e3fxhAHwMuvrmyuNm3hlEjdcpgndPoebu_JcGGIKitsZjE5LklpEsKFFHUvE"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 open-source under a permissive BSD license}}. So, you will always be able to use SFrames for free.\
+If you are not using SFrame, here is the dataset for this assignment in CSV format, so you can use {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/unwiYVVbg7qnXtYJqvXI2wDy1-hfdn2-3WK-Ld7i7d6g9jKchLDgAuWRKRylruNHMHegaF_FfF99264Iw_7_Qg.YChQWRkQfr0DQNTgjOZwpw.yWRCiycA6p1HCj0vzaX8mxxdAFmgUQoALSlQdNjotyLSoWOnmzWHCjcZBf8ryYJ7bdw6qt9LpW5uzFIw_ig9ryIJh_4r2vocTrfs0lbbEQJPDqBsS8dQF12eL9wQfyld1N1CShYQdJ6I4Urg_5D5dwFvQKClMv5oVDcO2m9pjDl3ecqrHmsatjLjnJohaff2rBYlqt7iSHFXT3lHLf7nlOJlmc4vLoVceoO0JScmx2zqqnn3IB6U3lZL6TedDcN0ap6TRLBBfRkUrsp6NjoK_g"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Pandas}} or other options out there: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/Xx1lj4bTHtTwJshKV7b_w6JHHCiyKBhKeOpDp43wUrI8LoBcsZVe0HBCYFdXT5vdvNu6LNDGfKUxpoRqxSgWTg.sTXPz9ZHOgVoYqTsQ9HDFg.TV180-tPFyb2Zj0Xy2fdab6vF0doHTdUK5RzvDpoC6XO15YuH8EkcaKpbRhDsroVXCskIMEKF8lNZ3veQnkrU-y1jih3S0BH9ByfgdLenHPfw0QC-R3UQ4SGZpVAKN8E4YJ9YTcDZ35Qhc7VK81BdF6lUjBrobRaQ0ZFQql838Vmd-N00Joy2szkNe1dxc-Y4CfRD9sxnqejthScCB1XOxp5oFVF1cMrR4pG3uKJXN5t5jvgRI2jDF0I9d7XNC_jDsUm4atmgHrf51wq3roOG8g1ikoxUruepODWwFYN7EqprD2Xgo-HIs98jL28qFWneTJkCxKJ5x3aPJnPuklJzkijpWL-XiTDRTy13U4fwOqKwtJSNPJ0-EO2HjrNLGRI"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 home_data.csv}}\
+\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Watch the video and explore the iPython notebook on predicting house prices\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you haven\'92t done so yet, before you start, we recommend you watch the video where we go over the iPython notebook on predicting house prices from this module. You can then open up the iPython notebook we used and familiarize yourself with the steps we covered in this example.\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you will do\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now you are ready! We are going do three tasks in this assignment. There are 3 results you need to gather along the way to enter into the quiz after this reading.\
+\pard\pardeftab720\sl400\sa280
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Selection and summary statistics:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  In the notebook we covered in the module, we discovered which neighborhood (zip code) of Seattle had the highest average house sale price. Now, take the sales data, select only the houses with this zip code, and compute the average price. 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save this result to answer the quiz at the end.
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\i\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. 
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Filtering data:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  One of the key features we used in our model was the number of square feet of living space (\'91sqft_living\'92) in the house. For this part, we are going to use the idea of filtering (selecting) data.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 In particular, we are going to use logical filters to select rows of an SFrame. You can find more info in the{\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/JLml4AdQlgHZEB3VvVNGyK0OTZWQ4v6duuUXD-VecW3VZVyaf7vPMTLNTPq9JGlASIS1it4zq5b_FKCJZWeyeg.CtKfH90LmYb74OTbZZfu0A.ZFbkr29bKzCPnKlEM32OehezFbz29LWpHBUwfXC_FQMde5QBwX_NJPaJ8ViSny23VMRAqpTtsugRB6vW9zf4h6jrAC1M9nctFfC3Oc8YQ_8xp30LefUzsu-XRIjSyj6sbha50zi7VKJTLGQE8UArbetI790QXJpm8StM16sxc0WZ3R5DFEQ81rSCJtjh-JT6ONvcQdIuAfnuaPnKxD5p23eGl1Mp98QcMwYSHp4cdLdaQXmb2ca1RY7yfCvpZ17fR0GrksNhSUPItSmtiFAKHVPx6f2ySqh8eP0samwDNXZpxHWy5e_oqU6vT7WWqAoUdRlZmaMW1miMR6yNlpluT7nYbPS4DPquGTk1dJA1qd_Tu682M2uEaW25ofiXothPXQmr-CINFBlJpgov7PRhhg"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Logical Filter section of this documentation}}.\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Using such filters, first select the houses that have \'91sqft_living\'92 higher than 2000 sqft but no larger than 4000 sqft.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What fraction of the all houses have \'91sqft_living\'92 in this range? 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save this result to answer the quiz at the end.
+\i0\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. Building a regression model with several more features:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  In the sample notebook, we built two regression models to predict house prices, one using just \'91sqft_living\'92 and the other one using a few more features, we called this set\
+\pard\pardeftab720\sl360
+
+\f2\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 my_features = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode']\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Now, you will build a model using the following features:\
+\pard\pardeftab720\sl360
+
+\f2\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 advanced_features = \
+[\
+'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode',\
+'condition', # condition of house				\
+'grade', # measure of quality of construction				\
+'waterfront', # waterfront property				\
+'view', # type of view				\
+'sqft_above', # square feet above ground				\
+'sqft_basement', # square feet in basement				\
+'yr_built', # the year built				\
+'yr_renovated', # the year renovated				\
+'lat', 'long', # the lat-long of the parcel				\
+'sqft_living15', # average sq.ft. of 15 nearest neighbors 				\
+'sqft_lot15', # average lot size of 15 nearest neighbors \
+]\
+\pard\pardeftab720\sl400\sa280
+
+\f0\i\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Note that using copy and paste from this webpage to the IPython Notebook sometimes does not work perfectly in some operating systems, especially on Windows. For example, the quotes defining strings may not paste correctly. Please check carefully is you use copy & paste.
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls4\ilvl0
+\b \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute the RMSE
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  (root mean squared error) on the test_data for the model using just 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 my_features
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 , and for the one using 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 advanced_features
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 .\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Note 1: when doing the train-test split, make sure you use seed=0, so you get the same training and test sets, and thus results, as we do.\
+Note 2: in the module we discussed residual sum of squares (RSS) as an error metric for regression, but GraphLab Create uses root mean squared error (RMSE). These are two common measures of error regression, and RMSE is simply the square root of the RSS:\
+\pard\pardeftab720\sl400
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \pard\pardeftab720\sl400
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 RMSE can be more intuitive than RSS, since its units are the same as that of the target column in the data, in our case the unit is dollars ($).\
+(Important note: when answering the question below using GraphLab Create, when you call the
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 linear_regression.create()
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  function, make sure you use the parameter 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 validation_set=None
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 , 
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 as done in the notebook you download above. When you use regression GraphLab Create, it sets aside a small random subset of the data to validate some parameters. This process can cause fluctuations in the final RMSE, so we will avoid it to make sure everyone gets the same answer.)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls5\ilvl0
+\b \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What is the difference in RMSE between the model trained with my_features and the one trained with advanced_features?
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save this result to answer the quiz at the end.
+\i0\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}

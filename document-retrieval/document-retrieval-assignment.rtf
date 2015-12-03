@@ -1,0 +1,196 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Medium;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red30\green87\blue232;
+\red51\green51\blue51;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\margl1440\margr1440\vieww15280\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl800\sa280
+
+\f0\fs68 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Retrieving Wikipedia articles\
+\pard\pardeftab720\sl400\sa280
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+In this module, we focused on using nearest neighbors and clustering to retrieve documents that interest users, by analyzing their text. We explored two document representations: word counts and TF-IDF. We also built an iPython notebook for retrieving articles from Wikipedia about famous people.\
+In this assignment, we are going to dig deeper into this application, explore the retrieval results for various famous people, and familiarize ourselves with the code needed to build a retrieval system. These techniques will be key to building the intelligent application in your capstone project.\
+Follow the rest of the instructions on this page to complete your program. When you are done, 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 instead of uploading your code, you will answer a series of quiz questions
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  (see the quiz after this reading) to document your completion of this assignment. The instructions will indicate what data to collect for answering the quiz.\
+\pard\pardeftab720\sl480\sa280
+
+\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Learning outcomes
+\f1\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls1\ilvl0
+\f0\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Execute document retrieval code with the iPython notebook\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Load and transform real, text data\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compare results with word counts and TF-IDF\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Set the distance function in the retrieval\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Build a document retrieval model using nearest neighbor search\cb1 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl480\sa280
+
+\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources you will need
+\f1\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You will need to install the software tools or use the free Amazon EC2 machine. Instructions for both options are provided in the reading for Module 1.\
+\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Download the data and starter code\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Before getting started, you will need to download the dataset and the starter iPython notebook that we used in the module.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the wikipedia dataset with articles on famous people here in SFrame format: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/eaPIvDskORpPqRQInDSsewlVQstQBWFybp4F0d6ZM6oXHuBkvHEdVrBsU1Mjx4hWCyDShd8GuSeFV691aJ9f-Q.DE-4mbjAF6lxC4cCGdsbQg.JWLWDfj3gJaG5NChEpT7QcIr0wTFXP-20GNCY9D9ciVEjYpK3J56yd-hRKIxuvhuMsmYwVrWCi34ZoYIAKM7sRfFnB6TGq3PsmFhEPimvTyKn7LUp9GXellN-Mcu0en12gDqNjfmjf6OQAfeLi25nJaYkhhcAm1MsQ9SRBFtsf09uYJAJlrk65M8bNinBk5ilXsu42-cco4SPDDulxMZli0AnUlzeg4e554k_fDsBhFLAuDM4dcDvtew8M7-fQMw9-W1gXrQW-5BZlcZoh_95-QRQV73VwnUhskwjGq0LQCbyq81NPIugoby8aueleVW73pOSVRDL14lTyc05lNJCu0jizm7CSnHg7C1DPcxzLMV0AIYemrABrXutA8hRLSWtr40zGds2Fu7iUL6I8msD46k5UD92l3iOvsMLaolaXxft5cJQm4E_WnRefqvpdAe"}}{\fldrslt 
+\b \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 people_wiki.gl.zip}}\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Download the document retrieval notebook from the module here: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/WZ-wIi3ZmapJcj8g61EO82qHdmCgOmzMGWTciAjyHrTQREq5LWzTAEQyEQnWQYxJ-L5yIMPEztws84719YapBA.f2v8evvq1n_r3YPVCP2mdg.zxZnpOuL8qc-IXe5VfLdnLvltsIWP6XKnCjEhhso1bDfZ4KdM0o-mekpaSA67kQWRqKpfdFIPDynl8neHaDN2PMlJh4SkcotMPKJPVoMuoOSu-WBjj2pysqrPZn7GfrOFG5DdC7B1tsXz8XRVrpPQ7ZgIZ4415qX3O-CaUu36iuezirOIeV5-vtWw7-kAoS6GlZ0B2Y-DJyESLUqvwccaE5rnj5YuJKwPeZIbof7oMi-nOvqxI1PgxeSRMfdzDMy1-WF4br8WN4KgX9ZRGVzvNbg_WOJ7Oexu8HG3nAWVMUU1HGzjNl-AdpGO5cgxa9Abv5ZLCl1yTEmch-wKQakfrc8uYkjyU62BbBRIPDBgVejLySzGQ5dH_GGUHbmfTLH6Utxm43dMAtDmrrgvDUuhsQvqYi-k_NJn-n7NCsnDze_HSKiGch4qYMXeu5ez_Edj5DUfgdWyUL533e771Bkxw"}}{\fldrslt 
+\b \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Document retrieval.ipynb}}\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls2\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save both of these files in the same directory (where you are calling iPython notebook from) and unzip the data file.\cb1 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now you are ready to get started!\
+\
+\pard\pardeftab720\sl480\sa280
+
+\i\b\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Note: If you would rather use other ML tools...
+\f1\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are welcome to use any ML tool for this course, such as {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/2Y7tBRNZ-XZIE_flmf2D22y0TP7bQGy2XSfWrAHIa5FP_Nvjpad5MEK22S6illPLB4kKqpl4cABi31NsQxb1RA.J96O6P0OD6E5rMseU4kiag.unh04Let0NrckdHXKLCOIGZ2nUGbgauMUwOzhcaTzTcFvFpmFTj4vLHUZUNspFUCg6Peo6Hihe-vqB--gPMq664Djj0827guZhe1XGWHGgX4pNnYKvCPpIn7MDoo-_jK3d9KAk2nGdyAKBPJ4cegwsER-fpeP9j0Pw67VhONV0G7pKH-BcaOqUCShIAivHmickJsYxbzybnZx18Ts60o7XbC8Y-Dos-lWOphBcNmUNsoy3k8sW6CBfbunvuvXL5QkUiiZfmbR5WOPEyCe5t1YGsnqxV-rXk5C1qrPdA39Gk"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 scikit-learn}}. Though, as discussed in the intro module,
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  we strongly recommend you use IPython Notebook and GraphLab Create. (GraphLab Create is free for academic purposes.)
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+If you are choosing to use other packages, we still recommend you use SFrame, which will allow you to scale to much larger datasets than Pandas. (Though, it's possible to use Pandas in this course, if your machine has sufficient memory.) The SFrame package is available in {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/s9ZenAUOnAyLhOm0psSjkFPD_PaP7j9guqOg2Hzw8XKo68JOCqcZUSxfvNHrHNnK6hHNe5yoLAsndi0N6EdWkQ.ykD3a4UxmN0Nl6NCXUN-9A.1-r84LZ9ZvCUFfPPcb-byO6jua5JylGxe5NCFKZiH3EJPf4kituI2FwrdAq-7hnJqkg2DJV81voPrqKRxC9ThO2eZEQokiW8pIErRzvBlOmxc6E8TFOa82yPXPv6gqI9XLj05GMVm0n8Jw6tDwRHi4RRkOg1H8s1i9KDEoXya9cJuVGReK-uhL6OjyGgkxas7Tr_40yDm0rzDetZ3fYfK6F81eL9Nzd9oupMX3CkayFAvb-e3fxhAHwMuvrmyuNm3hlEjdcpgndPoebu_JcGGIKitsZjE5LklpEsKFFHUvE"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 open-source under a permissive BSD license}}. So, you will always be able to use SFrames for free.\
+If you are not using SFrame, here is the dataset for this assignment in CSV format, so you can use {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/unwiYVVbg7qnXtYJqvXI2wDy1-hfdn2-3WK-Ld7i7d6g9jKchLDgAuWRKRylruNHMHegaF_FfF99264Iw_7_Qg.YChQWRkQfr0DQNTgjOZwpw.yWRCiycA6p1HCj0vzaX8mxxdAFmgUQoALSlQdNjotyLSoWOnmzWHCjcZBf8ryYJ7bdw6qt9LpW5uzFIw_ig9ryIJh_4r2vocTrfs0lbbEQJPDqBsS8dQF12eL9wQfyld1N1CShYQdJ6I4Urg_5D5dwFvQKClMv5oVDcO2m9pjDl3ecqrHmsatjLjnJohaff2rBYlqt7iSHFXT3lHLf7nlOJlmc4vLoVceoO0JScmx2zqqnn3IB6U3lZL6TedDcN0ap6TRLBBfRkUrsp6NjoK_g"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Pandas}} or other options out there: {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/VVMU8vAw1EXr3QxmmZwShf-I3bVbvcgpwx18y_d05CpzlrrsG6XFiIlXtimw1vIJzAMHUlCLFs31rdqO5ITOgw.6GqHBrSxS9fJg2zaTN_xWg.T0iOuuZRWyINBQcghthCnOVqcKMnJav5leaOjNnrUrSS2AERUvw6CsO7EWpGd8djVFmRQRVEmNtXITY4CA8J4yVA17Rik964ZspMnnUA8eK_VwKXiOx5B4RpZgn374xb_XvByEGKe-0-WmO84ZIzzP5MHmOKcpTXlfW1iGxPVZnUqUEDtfAM-0EzgsckbEJntPAYxpo_UsZoA-iWnBV9NcOmnsSlkvhoAvYXcpi8LJqTZ4Tgl1J7d0OLdFaHrhWxudpQF2YrUB2V6wQe6vC7jCatDOZiOb7R9ZlqEfv2AvSL4lteZVpUV9DTlGOTI3jU8NruMHP8yKmvFel9de0-NZAcd0JycrM3pSnGfqBh00VNJF_YTAV95yj7iVmuyqBq"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 people_wiki.csv}}\
+\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Watch the video and explore the iPython notebook on retrieving wikipedia articles\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 If you haven\'92t done so yet, before you start, we recommend you watch the video where we go over the iPython notebook on retrieving documents from this module. You can then open up the iPython notebook we used and familiarize yourself with the steps we covered in this example.\
+\pard\pardeftab720\sl480\sa280
+
+\f1\fs40 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What you will do\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Now you are ready! We are going do three tasks in this assignment. There are several results you need to gather along the way to enter into the quiz after this reading.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls3\ilvl0
+\b \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compare top words according to word counts to TF-IDF:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  In the notebook we covered in the module, we explored two document representations: word counts and TF-IDF. Now, take a particular famous person, 'Elton John'. What are the 3 words in his articles with highest word counts? What are the 3 words in his articles with highest TF-IDF? These results illustrate why TF-IDF is useful for finding important words.
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save these results to answer the quiz at the end.
+\i0\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\ls3\ilvl0
+\b \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Measuring distance:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Elton John is a famous singer; let\'92s compute the distance between his article and those of two other famous singers. In this assignment, you will use the {\field{\*\fldinst{HYPERLINK "https://eventing.coursera.org/api/redirectStrict/Kym7oYBQjdLPDma7_bcAZIF-i30p-F3W3yZ2AOg8s_71Y8vXj9QflMQqKJbnZBQh3lOXajMrudWq7ZxCDQ2wIw.a8hUOVg8GIHjmoXWuZhOtQ.3Mdo71vGENcexRE__axuqf4NE8QMGNr03rnmTKf2ON-OkN6huBUqSArOzhjCul2uEGoMRVVePKCkEDuNScSAyo-b98EtkLlIKcIMi7p1CySDzUCQcyyLtERAMnAKN1a0okgJeNG_R9zuXtTA_H5X2EHmoGWjlQ-CXuHbQC1yNbvMmO2-qroFL69B4H6ZdXwygEQKkoFBwmKHeywplcpFCsNRcUsTuM_nhBIQd1aJf_o2VaXCI0Rxsnt6XDv-lQcFqlbb3hVvdBk_2IuaQ-v2LUtiDIktZaPXpkr_NEN-dZYdlpb2eTvLG25-5jK-AAvJ3aEzn1mxRFg_KvRUTJzIqY6uz2ulRVN5H_ratmVfwGaB-sH6v4nmLEHsR_JEIbQfmeHvAeO_7sogOu_DhgFmOcrdczZOh0xUIL73fkI2S9-R2us7sT3v4vIakBltlp3N"}}{\fldrslt 
+\i \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 cosine distance}}, which one measure of similarity between vectors, similar to the one discussed in the lectures. You can compute this distance using the 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 graphlab
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 .distances.cosine function. What\'92s the cosine distance between the articles on \'91Elton John\'92 and \'91Victoria Beckham\'92? What\'92s the cosine distance between the articles on \'91Elton John\'92 and Paul McCartney\'92? Which one of the two is closest to Elton John? Does this result make sense to you? 
+\i\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save these results to answer the quiz at the end.
+\i0\b0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls3\ilvl0
+\b \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Building nearest neighbors models with different input features and setting the distance metric:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  In the sample notebook, we built a nearest neighbors model for retrieving articles using TF-IDF as features and using the default setting in the construction of the nearest neighbors model. Now, you will build two nearest neighbors models:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls4\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Using word counts as features\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls4\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Using TF-IDF as features\cb1 \
+\pard\pardeftab720\sl400\sa280
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In both of these models, we are going to set the distance function to cosine similarity. Here is how: when you call the function\
+\pard\pardeftab720\sl360
+
+\f2\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 graphlab.nearest_neighbors.create\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 add the parameter:\
+\pard\pardeftab720\sl360
+
+\f2\fs26 \cf3 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 distance='cosine'\
+\pard\pardeftab720\sl400\sa280
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Now we are ready to use our model to retrieve documents. Use these two models to collect the following results:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\sa280
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What\'92s the most similar article, other than itself, to the one on \'91Elton John\'92 using word count features?\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What\'92s the most similar article, other than itself, to the one on \'91Elton John\'92 using TF-IDF features?\cb1 \
+\ls5\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What\'92s the most similar article, other than itself, to the one on \'91Victoria Beckham\'92 using word count features?\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls5\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What\'92s the most similar article, other than itself, to the one on \'91Victoria Beckham\'92 using TF-IDF features?\cb1 \
+\pard\pardeftab720\sl400
+
+\i\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save these results to answer the quiz at the end.
+\i0\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
